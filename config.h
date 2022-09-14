@@ -71,6 +71,7 @@ static const struct arg args[] = {
 	{  cpu_freq,             "%sHz|",                  NULL                                    },
 	{  temp,                 "%sC]",                   "/sys/class/thermal/thermal_zone0/temp" },
 	{  ram_used,             "[RAM:%s]",               NULL                                    },
+	{  vol_perc,             "[VOL:%s%]",              "/dev/mixer"                            },
 	{  datetime,             "[%s]",                   "%F %r"                                 },
 	{  keymap,               "[%s]",                   NULL                                    }
 };
