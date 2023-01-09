@@ -3,7 +3,7 @@
 #include "NVCtrl/NVCtrlLib.h"
 #include "../util.h"
 
-// search NVCtrl.h fot the needed attribute
+// search NVCtrl.h for the needed attribute
 
 const char *nvidia_temp(const char *gpu_id)
 {
@@ -36,7 +36,7 @@ const char *nvidia_perc(const char *gpu_id)
 	XCloseDisplay(dpy);
 	if (value == NULL)
 	{
-		return "";
+		return "-1";
 	}
 	// get the precentage after "graphics="
 	int start = 9, end = 9;
