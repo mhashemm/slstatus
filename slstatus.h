@@ -9,6 +9,10 @@ const char *battery_remaining(const char *);
 const char *cpu_freq(void);
 const char *cpu_perc(void);
 
+/* gpu */
+const char *nvidia_temp(const char *);
+const char *nvidia_perc(const char *);
+
 /* datetime */
 const char *datetime(const char *fmt);
 
