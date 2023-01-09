@@ -43,5 +43,7 @@ const char *nvidia_perc(const char *gpu_id)
 	while (value[end++] == ',')
 		;
 	value[end] = '\0';
-	return &value[start];
+	const char *buf = bprintf("%s", &value[start]);
+	free(value);
+	return buf;
 }
