@@ -67,11 +67,13 @@ static const struct arg args[] = {
 	/* function              format                    argument */
 	{  netspeed_rx,          "[DOWN:%s]",              "enp0s31f6"                             },
 	{  netspeed_tx,          "[UP:%s]",                "enp0s31f6"                             },
-	{  cpu_perc,             "[CPU:%s%|",              NULL                                    },
+	{  nvidia_perc,          "[GPU:%s%%|",             "0"                                     },
+	{  nvidia_temp,          "%sC]",                   "0"                                     },
+	{  cpu_perc,             "[CPU:%s%%|",             NULL                                    },
 	{  cpu_freq,             "%sHz|",                  NULL                                    },
 	{  temp,                 "%sC]",                   "/sys/class/thermal/thermal_zone0/temp" },
 	{  ram_used,             "[RAM:%s]",               NULL                                    },
-	{  vol_perc,             "[VOL:%s%]",              "/dev/mixer"                            },
+	{  vol_perc,             "[VOL:%s%%]",             "/dev/mixer"                            },
 	{  datetime,             "[%s]",                   "%F %r"                                 },
 	{  keymap,               "[%s]",                   NULL                                    }
 };
