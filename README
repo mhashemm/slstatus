@@ -9,6 +9,7 @@ Features
 - Battery percentage/state/time left
 - CPU usage
 - CPU frequency
+- GPU [Nvidia] (temperature, percentage)
 - Custom shell commands
 - Date and time
 - Disk status (free storage, percentage, total storage and used storage)
@@ -33,7 +34,8 @@ Features
 Requirements
 ------------
 Currently slstatus works on FreeBSD, Linux and OpenBSD.
-In order to build slstatus you need the Xlib header files.
+In order to build slstatus you need the Xlib header files,
+and libXNVCtrl (https://github.com/mhashemm/nvidia-settings/tree/libXNVCtrl/src/libXNVCtrl).
 
 
 Installation
