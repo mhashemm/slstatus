@@ -81,18 +81,25 @@ main(int argc, char *argv[])
 		die("XOpenDisplay: Failed to open display");
 	}
 
+	size_t args_len = LEN(args);
+	struct arg* curr_args = args;
+	if (sflag) {
+		args_len = LEN(stdout_args);
+		curr_args = stdout_args;
+	}
+
 	do {
 		if (clock_gettime(CLOCK_MONOTONIC, &start) < 0) {
 			die("clock_gettime:");
 		}
 
 		status[0] = '\0';
-		for (i = len = 0; i < LEN(args); i++) {
-			if (!(res = args[i].func(args[i].args))) {
+		for (i = len = 0; i < args_len; i++) {
+			if (!(res = curr_args[i].func(curr_args[i].args))) {
 				res = unknown_str;
 			}
 			if ((ret = esnprintf(status + len, sizeof(status) - len,
-			                    args[i].fmt, res)) < 0) {
+			                    curr_args[i].fmt, res)) < 0) {
 				break;
 			}
 			len += ret;

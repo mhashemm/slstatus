@@ -63,7 +63,7 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
-static const struct arg args[] = {
+static struct arg args[] = {
 	/* function              format                    argument */
 	{  netspeed_rx,          "[DOWN:%s]",              "enp0s31f6"                             },
 	{  netspeed_tx,          "[UP:%s]",                "enp0s31f6"                             },
@@ -76,4 +76,10 @@ static const struct arg args[] = {
 	{  vol_perc,             "[VOL:%s%%]",             "/dev/mixer"                            },
 	{  datetime,             "[%s]",                   "%F %r"                                 },
 	{  keymap,               "[%s]",                   NULL                                    }
+};
+
+
+static struct arg stdout_args[] = {
+	/* function              format                    argument */
+	{ load_avg, "%s", NULL}
 };
