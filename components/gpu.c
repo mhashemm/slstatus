@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <X11/Xlib.h>
 #include "NVCtrl/NVCtrl.h"
 #include "NVCtrl/NVCtrlLib.h"
