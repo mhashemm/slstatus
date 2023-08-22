@@ -99,7 +99,7 @@ main(int argc, char *argv[])
 		}
 
 		if (sflag) {
-			puts(status);
+			printf("\033c%s", status);
 			fflush(stdout);
 			if (ferror(stdout))
 				die("puts:");
