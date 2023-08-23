@@ -17,7 +17,7 @@ vol_perc(const char *mixname)
 	snd_mixer_selem_id_t *mixid = NULL;
 	snd_mixer_elem_t *elem = NULL;
 	long min = 0, max = 0, volume = -1;
-	int err;
+	int err, muted = 0;
 	if ((err = snd_mixer_open(&mixer, 0)))
 	{
 		warn("snd_mixer_open: %d", err);
@@ -47,6 +47,11 @@ vol_perc(const char *mixname)
 		warn("snd_mixer_find_selem(mixer, \"%s\") == NULL", mixname);
 		goto cleanup;
 	}
+	if ((err = snd_mixer_selem_get_playback_switch(elem, SND_MIXER_SCHN_MONO, &muted)))
+	{
+		warn("snd_mixer_selem_get_playback_switch(): %d", err);
+		goto cleanup;
+	}
 	if ((err = snd_mixer_selem_get_playback_volume_range(elem, &min, &max)))
 	{
 		warn("snd_mixer_selem_get_playback_volume_range(): %d", err);
@@ -60,5 +65,6 @@ cleanup:
 	snd_mixer_free(mixer);
 	snd_mixer_detach(mixer, devname);
 	snd_mixer_close(mixer);
-	return volume == -1 ? NULL : bprintf("%.0f", (volume - min) * 100. / (max - min));
+	return muted == 0 ? "-1" : volume == -1 ? NULL
+																					: bprintf("%.0f", (volume - min) * 100. / (max - min));
 }
