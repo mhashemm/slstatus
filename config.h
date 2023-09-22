@@ -74,6 +74,6 @@ static const struct arg args[] = {
 	{  temp,                 "%sC]",                   "/sys/class/thermal/thermal_zone0/temp" },
 	{  ram_used,             "[RAM:%s]",               NULL                                    },
 	{  vol_perc,             "[VOL:%s%%]",             "Master"                                },
-	{  datetime,             "[%s]",                   "%F %r"                                 },
+	{  datetime,             "[%s]",                   "%F %A %r"                              },
 	{  keymap,               "[%s]",                   NULL                                    }
 };
