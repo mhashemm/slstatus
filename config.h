@@ -65,8 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function              format                    argument */
-	{  netspeed_rx,          "[DOWN:%s]",              "enp0s31f6"                             },
-	{  netspeed_tx,          "[UP:%s]",                "enp0s31f6"                             },
+	// {  netspeed_rx,          "[DOWN:%s]",              "enp0s31f6"                             },
+	// {  netspeed_tx,          "[UP:%s]",                "enp0s31f6"                             },
+	{  wifi_perc,            "[W:%s%%]",               "wlp0s20f0u1"                             },
+	{  netspeed_rx,          "[DOWN:%s]",              "wlp0s20f0u1"                             },
+	{  netspeed_tx,          "[UP:%s]",                "wlp0s20f0u1"                             },
 	{  nvidia_perc,          "[GPU:%s%%|",             "0"                                     },
 	{  nvidia_temp,          "%sC]",                   "0"                                     },
 	{  cpu_perc,             "[CPU:%s%%|",             NULL                                    },
@@ -74,6 +77,6 @@ static const struct arg args[] = {
 	{  temp,                 "%sC]",                   "/sys/class/thermal/thermal_zone0/temp" },
 	{  ram_used,             "[RAM:%s]",               NULL                                    },
 	{  vol_perc,             "[VOL:%s%%]",             "Master"                                },
-	{  datetime,             "[%s]",                   "%F %A %r"                              },
+	{  datetime,             "[%s]",                   "%F %r"                              },
 	{  keymap,               "[%s]",                   NULL                                    }
 };
