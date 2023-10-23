@@ -67,9 +67,9 @@ static const struct arg args[] = {
 	/* function              format                    argument */
 	// {  netspeed_rx,          "[DOWN:%s]",              "enp0s31f6"                             },
 	// {  netspeed_tx,          "[UP:%s]",                "enp0s31f6"                             },
-	{  wifi_perc,            "[W:%s%%]",               "wlp0s20f0u1"                             },
-	{  netspeed_rx,          "[DOWN:%s]",              "wlp0s20f0u1"                             },
-	{  netspeed_tx,          "[UP:%s]",                "wlp0s20f0u1"                             },
+	{  wifi_perc,            "[W:%s%%]",               "wlp4s0u2"                             },
+	{  netspeed_rx,          "[DOWN:%s]",              "wlp4s0u2"                             },
+	{  netspeed_tx,          "[UP:%s]",                "wlp4s0u2"                             },
 	{  nvidia_perc,          "[GPU:%s%%|",             "0"                                     },
 	{  nvidia_temp,          "%sC]",                   "0"                                     },
 	{  cpu_perc,             "[CPU:%s%%|",             NULL                                    },
