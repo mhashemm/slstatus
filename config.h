@@ -76,7 +76,7 @@ static const struct arg args[] = {
 	{  cpu_freq,             "%sHz|",                  NULL                                    },
 	{  temp,                 "%sC]",                   "/sys/class/thermal/thermal_zone0/temp" },
 	{  ram_used,             "[RAM:%s]",               NULL                                    },
-	{  vol_perc,             "[VOL:%s%%]",             "Master"                                },
+	{  run_command,          "[VOL:%s]",               "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf $2}'"                                },
 	{  datetime,             "[%s]",                   "%F %r"                              },
 	{  keymap,               "[%s]",                   NULL                                    }
 };
