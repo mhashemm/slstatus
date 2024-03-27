@@ -5,6 +5,7 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
+#include "../slstatus.h"
 #include "../util.h"
 
 #include <alsa/asoundlib.h>
